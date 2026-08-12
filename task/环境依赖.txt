@@ -1,4 +1,4 @@
-操作系统：Windows11、macOS或主流64位Linux。
+操作系统： Windows11、macOS或主流64位Linux。
 
 主软件为Playwright1.50或更高版本及其配套Chromium，任务代码需实际创建browser context与page，并使用route、getByRole、keyboard、表单状态和网络请求接口完成操作。Node.js20或更高版本与npm用于安装依赖和运行入口，依赖版本以package-lock.json为准。
 

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "skill": "humanizer-zh",
+  "result": "PASS",
+  "reviewed_scopes": [
+    "任务名称",
+    "任务概要",
+    "任务prompt",
+    "关键动作",
+    "评分表",
+    "环境依赖",
+    "软件步骤",
+    "输入材料中的自然语言",
+    "Reference中的用户可见文字",
+    "关键标准答案工作簿全部自然语言",
+    "任务规格工作簿全部自然语言"
+  ],
+  "scores": {
+    "直接性": 10,
+    "节奏": 9,
+    "信任度": 10,
+    "真实性": 9,
+    "精炼度": 9,
+    "total": 47
+  },
+  "minimum_total": 45,
+  "notes": [
+    "用灰度中出现的短信误开和版本冲突切入，明确增长运营、前端维护与无障碍测试人员各自使用的报告",
+    "删除固定场景计数、请求计数、焦点行数、validation自证、重复运行和工程异常用例等自动评测口吻",
+    "保留同意裁决、版本请求、失败回滚和真实键盘焦点等Playwright专业难点，业务规则都能定位到输入策略",
+    "段落长短随业务交接变化，没有宣传腔、模糊归因、否定式排比、机械三段式或聊天痕迹"
+  ],
+  "online_ai_detection_used_as_conclusion": false,
+  "reviewed_artifacts_sha256": {
+    "任务概要.txt": "17a0d9a5cb4343fdc9e1a513542fd13c588260e37f68c09c267748d9e5eb21d6",
+    "任务prompt.txt": "6ef2ddbc420a0c45243b931cbd6e5d378fe973e7d0f87f7e92ffbc83b7c5985a",
+    "关键动作.txt": "9b90dd79060e147fdf8aa2b4d9bed09cdff9329d414dcd86fbc5d4d14f255167",
+    "评分表.txt": "0d7bb6c2b976b15dbd2b4bf7785051bf248d92717374beac92e1f1f95e40a8d6",
+    "环境依赖.txt": "73f73ea599254c6f43677fe00a46ba5056d0be118c0b1454f7452898a1bf47ff",
+    "相关专业软件的关键步骤.txt": "12f29022881b37c93e129f0c816cefb53b25c5b0237bbb6e30cc3a1055a0a536",
+    "任务名称.txt": "98e2136ea3650804746d8d132ae4ecfd4d75ef9f035ca081cf85cf74eb5e924c",
+    "task_fields.json": "76572309b20c89e9892a2c8e79b4888e2bde454f79f46b12b7e7e94dd2281e7c",
+    "输入数据包.zip": "b601fde86eaac6184727455c3180df082c08e0c45eceb968bad439690eb636ce",
+    "reference.zip": "3b18f1a0f74fefd3e5804e7d7f170b4bb9a7f03bc87fdb3fc7b711795cca494a",
+    "关键标准答案.xlsx": "2c54afbdd0fffd21a4b29fcbc5c4245ee3d0dd9e10f9282e9902d5c8f4cdb46c",
+    "任务规格转化.xlsx": "c00a0a47dafb244c8380f9a00608e711c17d7264e9840d27f0788b824f452f85",
+    "ALE-专家数据作业表.csv": "c7308be7edf0a722c2c8f909fa4ccbc8bbb8c85d4922e37ff2654e80b932ac6c"
+  }
+}

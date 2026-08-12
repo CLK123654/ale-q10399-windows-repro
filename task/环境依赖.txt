@@ -1,0 +1,7 @@
+支持Windows11、macOS和主流64位Linux。主软件为Playwright1.62.0及其配套Chromium，必须实际创建browser context和page，并使用route、getByRole、keyboard、表单状态与网络请求接口完成浏览器操作。静态读取HTML或手工浏览页面不能替代这条工作链。
+
+辅助工具包括Node.js24、npm、PowerShell、Windows终端或系统终端。依赖按package-lock.json安装，Playwright与Chromium安装阶段需要访问软件源；正式运行只访问127.0.0.1，不连接订阅、短信、营销或身份服务。Playwright、Chromium与Node.js按各自开源许可使用，不需要商业许可证。
+
+建议使用双核CPU、4GB内存，并预留1GB浏览器缓存和输出空间；不需要GPU。执行账号需要读取app、fixtures、starter、scripts和tools目录，并可写output及浏览器临时目录。单次入口最长运行120秒。
+
+本题容易出错的地方是路由注册晚于page.goto、browser context之间残留状态、Tab起点漂移、地区同意写死、revision取错用户、失败响应覆盖了回滚文案，以及读取aria-live状态过早。

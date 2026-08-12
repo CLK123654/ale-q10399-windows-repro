@@ -1,0 +1,5 @@
+# Q10399独立Windows复现
+
+本仓库只包含订阅偏好页任务的最终公开材料和独立Windows质量检查。候选任务正文位于task，四个附件位于artifacts。
+
+工作流在GitHub托管的Windows2025环境安装锁定版Playwright和Chromium，从四附件开始完成两个独立目录、CRLF输入、有效旅程变化与无效输入失败关闭检查。正式浏览器运行只访问本机回环地址。

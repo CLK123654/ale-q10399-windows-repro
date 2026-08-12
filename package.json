@@ -1,0 +1,14 @@
+{
+  "name": "ale-q10399-windows-repro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node verification/verify.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

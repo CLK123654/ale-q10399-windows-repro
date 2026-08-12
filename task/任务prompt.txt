@@ -1,0 +1,9 @@
+订阅设置页准备进入发布窗口。上一轮灰度中，未验证手机号仍可能开启短信提醒，版本冲突后页面也曾保留没有保存成功的开关状态。增长运营希望逐个查看订阅结果，前端维护人员要核对保存请求和回滚原因，无障碍测试人员还需要一条完整的键盘焦点记录。
+
+输入数据包的app目录是待检查页面。fixtures/profiles.json提供脱敏用户资料与当前偏好，fixtures/consent_policy.json规定接口路径、地区同意、手机号验证、版本状态、页面文案和键盘合同，fixtures/save_scenarios.csv列出本次发布旅程。starter目录提供待完成的测试骨架，README.md说明入口与目录。请把Playwright配置写入output/playwright.config.ts，把浏览器测试写入output/tests/subscription_settings.spec.ts。
+
+测试必须启动Chromium并为焦点检查及每条保存旅程建立独立browser context。页面打开前，通过page.route接管策略声明的资料、策略和保存接口。保存请求的头名取revision_header，头值取所选用户的revision，JSON正文包含user_id与四个目标开关。手机号或地区同意规则在页面本地拦截时，不应产生保存请求。
+
+每条保存旅程都要从页面选择对应用户，设置目标开关与同意复选框，再触发保存。成功响应保留目标状态；策略声明的版本冲突或其他失败响应恢复profiles.json中的旧状态，并复位同意复选框。aria-live区域要保留策略中的结果文案。键盘检查从新页面的初始焦点开始，按keyboard_contract逐次发送Tab，使用策略中的role与accessible name确认焦点，最后用Enter触发撤销并确认修改被恢复。
+
+在input_data目录运行npm run process。完成后交付output/playwright.config.ts、output/tests/subscription_settings.spec.ts、output/reports/settings_state_report.csv、output/reports/save_rollback_report.csv和output/reports/keyboard_focus_report.csv。状态报告按save_scenarios.csv顺序记录每条旅程的请求证据、最终开关、结果、原因与页面文案；回滚报告只收录未保存的旅程；焦点报告按keyboard_contract顺序记录实际焦点。正式运行只访问本机回环地址，不修改页面、资料、策略或旅程输入。

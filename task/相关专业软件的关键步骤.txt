@@ -1,0 +1,7 @@
+1. 读取profiles.json、consent_policy.json和save_scenarios.csv，按user_id关联地区、验证状态、revision、目标开关和服务端状态。
+2. 在playwright.config.ts配置output/tests、Chromium项目、动态baseURL、浏览器产物目录和static_server.mjs提供的webServer。
+3. 调用browser.newContext为焦点检查与每条保存旅程建立隔离会话，在page.goto前用page.route接管profiles_endpoint、policy_endpoint和save_endpoint。
+4. 从新页面调用page.keyboard.press逐次发送Tab，以getByRole和策略中的accessible name核对document.activeElement，再用Enter激活撤销按钮。
+5. 通过selectOption和setChecked装载旅程目标，点击保存按钮并捕获PUT请求的revision头与JSON正文。
+6. 对本地规则拦截检查保存请求未发生；对成功响应读取目标开关；对失败响应读取恢复后的旧开关、复位的同意框与aria-live文案。
+7. 根据浏览器请求和页面状态写出三份CSV，按旅程输入顺序或keyboard_contract顺序检查主键、字段与跨报告关联。

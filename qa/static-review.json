@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "scanned_sources": 163,
+  "violations": [],
+  "answer_sheets": [
+    "交付物答案清单",
+    "固定字段答案",
+    "固定集合答案",
+    "固定数值答案",
+    "允许变体答案"
+  ],
+  "specification_sheets": [
+    "任务规格转化"
+  ],
+  "task_spec_row_count": 18,
+  "task_spec_column_count": 2,
+  "task_asset_id": "playwright_subscription_consent_rollback",
+  "task_asset_id_valid": true,
+  "forbidden_spec_labels": [],
+  "declared_delivery_paths": [
+    "output/playwright.config.ts",
+    "output/reports/keyboard_focus_report.csv",
+    "output/reports/save_rollback_report.csv",
+    "output/reports/settings_state_report.csv",
+    "output/tests/subscription_settings.spec.ts"
+  ],
+  "reference_paths": [
+    "output/playwright.config.ts",
+    "output/reports/keyboard_focus_report.csv",
+    "output/reports/save_rollback_report.csv",
+    "output/reports/settings_state_report.csv",
+    "output/tests/subscription_settings.spec.ts"
+  ],
+  "business_inputs": [
+    "input_data/app/subscription_settings.html",
+    "input_data/app/subscription_settings.js",
+    "input_data/fixtures/profiles.json",
+    "input_data/fixtures/consent_policy.json",
+    "input_data/fixtures/save_scenarios.csv"
+  ],
+  "business_inputs_present": true,
+  "leaked_answer_columns": false,
+  "online_ai_detector_used_as_conclusion": false
+}

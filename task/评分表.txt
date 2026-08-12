@@ -1,6 +1,6 @@
 总分：100分
 
-检查项：交付文件与Playwright入口
+1. 交付文件与Playwright入口
 分值：12分
 标准答案或判定规则：五个声明路径均存在，配置与测试源码可读，在input_data运行npm run process后由Playwright Chromium生成三份CSV
 关键字段或路径：output/playwright.config.ts；output/tests/subscription_settings.spec.ts；output/reports/settings_state_report.csv；output/reports/save_rollback_report.csv；output/reports/keyboard_focus_report.csv
@@ -12,7 +12,7 @@
 优先级：Gate项
 所属层级：L8运行验证或可执行行为层
 
-检查项：浏览器会话与动态路由
+2. 浏览器会话与动态路由
 分值：10分
 标准答案或判定规则：测试启动Chromium，每条保存旅程使用独立browser context；profiles_endpoint、policy_endpoint和save_endpoint在page.goto前由page.route接管
 关键字段或路径：consent_policy.json的三个endpoint；playwright.config.ts；subscription_settings.spec.ts中的browser.newContext、page.route和page.goto
@@ -24,7 +24,7 @@
 优先级：Gate项
 所属层级：L2软件或工具操作层
 
-检查项：键盘焦点与撤销
+3. 键盘焦点与撤销
 分值：13分
 标准答案或判定规则：keyboard_focus_report.csv按keyboard_contract逐项记录order_index、locator、expected_role、expected_name和focused；每步实际发送Tab，最后以Enter触发撤销并恢复修改
 关键字段或路径：consent_policy.json的keyboard_contract、keyboard_roles和keyboard_names；keyboard_focus_report.csv全部字段
@@ -36,7 +36,7 @@
 优先级：高权重项
 所属层级：L8运行验证或可执行行为层
 
-检查项：保存前同意裁决
+4. 保存前同意裁决
 分值：17分
 标准答案或判定规则：短信提醒遵循sms_requires_verified_phone；个性化优惠在explicit_consent_regions内遵循显式同意；本地拦截旅程不产生保存请求，并恢复用户旧偏好及同意框
 关键字段或路径：profiles.json的region与phone_verified；consent_policy.json的rollback_rules和status_messages；settings_state_report.csv与save_rollback_report.csv
@@ -48,7 +48,7 @@
 优先级：高权重项
 所属层级：L6领域计算与专业规则层
 
-检查项：保存请求与成功状态
+5. 保存请求与成功状态
 分值：16分
 标准答案或判定规则：允许提交的旅程各发出一次PUT，请求头名来自revision_header，值等于所选profile的revision，正文包含user_id与四个目标开关；成功响应后页面保留目标状态
 关键字段或路径：profiles.json的revision；save_scenarios.csv的target字段；consent_policy.json的save_endpoint与revision_header；settings_state_report.csv
@@ -60,7 +60,7 @@
 优先级：高权重项
 所属层级：L5多源关联与字段一致性层
 
-检查项：失败响应回滚
+6. 失败响应回滚
 分值：17分
 标准答案或判定规则：版本冲突状态取stale_revision_status，其他非成功状态使用unexpected_http_status；失败后四个开关恢复profile旧值，同意框复位，aria-live保留对应策略文案
 关键字段或路径：consent_policy.json的rollback_rules和status_messages；profiles.json的current字段；settings_state_report.csv与save_rollback_report.csv
@@ -72,7 +72,7 @@
 优先级：高权重项
 所属层级：L6领域计算与专业规则层
 
-检查项：报告结构与跨表闭合
+7. 报告结构与跨表闭合
 分值：9分
 标准答案或判定规则：状态报告覆盖save_scenarios.csv全部scenario_id且顺序一致；回滚报告集合等于结果不是saved的旅程；焦点报告集合与keyboard_contract一致
 关键字段或路径：三份CSV表头、scenario_id、result、rollback_reason、order_index与locator
@@ -84,7 +84,7 @@
 优先级：普通项
 所属层级：L9跨产物一致性与可追溯层
 
-检查项：离线边界与输入保护
+8. 离线边界与输入保护
 分值：6分
 标准答案或判定规则：正式运行只访问127.0.0.1，页面、用户资料、策略、旅程和starter输入保持不变
 关键字段或路径：app目录；fixtures目录；starter目录；playwright.config.ts的baseURL与webServer；测试路由

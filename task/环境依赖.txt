@@ -1,3 +1,5 @@
-任务可在Windows11原生环境、macOS或64位Linux运行。主软件为Playwright1.62.0及锁文件对应的Chromium，必须实际创建browser context与page，并使用route、getByRole、keyboard、表单状态和网络请求接口完成操作。Node.js24、npm及PowerShell或系统终端负责依赖安装和入口调用；静态读取HTML或手工浏览不能替代浏览器会话。
+操作系统：Windows11、macOS或主流64位Linux。
 
-依赖按package-lock.json安装，Playwright和Chromium安装阶段需要访问软件源，正式运行只访问127.0.0.1，不连接订阅、短信、营销或身份服务。执行账户需要读取app、fixtures、starter、scripts和tools，并能写入output及浏览器临时目录。普通开发电脑的CPU即可完成任务，无需独立GPU；磁盘需容纳Node.js依赖、Chromium缓存和报告。入口应设置数分钟级有限超时，以覆盖浏览器启动、各场景交互和服务关闭。不需要业务账号。
+主软件为Playwright1.50或更高版本及其配套Chromium，任务代码需实际创建browser context与page，并使用route、getByRole、keyboard、表单状态和网络请求接口完成操作。Node.js20或更高版本与npm用于安装依赖和运行入口，依赖版本以package-lock.json为准。
+
+适合当前浏览器场景的普通开发电脑CPU与内存即可完成处理，无需独立GPU。磁盘需容纳Node.js依赖、Chromium缓存和三份报告。执行账户需能读取app、fixtures、starter、scripts和tools，并能写入output及浏览器临时目录。任务只访问127.0.0.1。入口需设置有限超时，覆盖本题场景并避免异常无限等待。
